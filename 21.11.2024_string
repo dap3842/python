@@ -1,0 +1,58 @@
+from math import floor
+
+
+def up(txt):
+    return txt.upper(), txt.lower()
+def gls(txt):
+    cout =0
+    for i in txt:
+        if i in "aeiouAEIOU":
+            cout+=1
+    return cout
+def bad(txt):
+    return txt.replace("bad","good")
+def pal(txt):
+    len1=floor(len(txt)/2)
+    ret=True
+    for i in range(1,len1):
+          if txt[i]==txt[-i]:
+              pass
+          else:
+              ret=False
+    return ret
+def dell(txt,smb):
+    return txt.replace(smb,"")
+def pstr(txt,x1,x2):
+    return txt[x1:x2]
+def simb(txt):
+    sp={}
+    for i in txt:
+        if i not in sp:
+            sp[i]=1
+        else:
+            sp[i]+=1
+    return sp
+def poisk(txt):
+    af=len(txt)+1
+    al=len(txt)*-1-1
+    for i in txt:
+        if (i=="a" or i=="A") and af<= txt.index(i):
+            af=txt.index(i)
+        if (i=="a"or i=="A") and al>= txt.index(i):
+            al=txt.index(i)
+    return af,al
+def razd(txt):
+    return txt.split()
+def izm(txt):
+     lsti=0
+     for i in txt:
+        print(lsti,txt[lsti])
+        if txt[lsti]==" ":
+            list1 = list(txt)
+            list1[txt.index(i)] = txt[txt.index(i)].upper()
+            txt = ''.join(list1)
+        try:
+            lsti=txt.index(i)
+        except:
+            lsti=0
+     return txt
